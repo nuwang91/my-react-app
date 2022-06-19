@@ -25,6 +25,8 @@ function Expenses(props) {
       ></ExpenseItem>
     );
   });
+  
+  const expensesContent = filteredExpenses.length > 0 ? listOfExpenses : <p>No Expenses found.</p>;
 
   return (
     <Card className="expenses">
@@ -32,7 +34,7 @@ function Expenses(props) {
         onFilterChange={filterChangeHandler}
         selected={filteredYear}
       />
-      {listOfExpenses}
+      {expensesContent}
     </Card>
   );
 }
